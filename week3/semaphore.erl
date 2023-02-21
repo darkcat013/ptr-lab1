@@ -19,5 +19,5 @@ semaphoreActor(Value, MaxValue) ->
     receive
         {acquire, Pid} when Value > 0 andalso Value =< MaxValue -> Pid ! {ok}, semaphoreActor(Value-1, MaxValue);
         {acquire, Pid} when Value =< 0 -> Pid ! {wait}, semaphoreActor(Value, MaxValue);
-        {release} -> semaphoreActor(Value + 1, MaxValue)
+        {release} when Value < MaxValue ->  semaphoreActor(Value + 1, MaxValue)
     end.

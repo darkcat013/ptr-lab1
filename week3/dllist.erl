@@ -9,18 +9,18 @@ create_dllist(List) when is_list(List) ->
     CurrentPid = spawn(?MODULE, listItem, [H]),
     create_dllist(T, [], head, CurrentPid).
 
-create_dllist([], Acc, PreviousPid, CurrentPid) -> 
-    lists:reverse([{PreviousPid, CurrentPid, 'end'} | Acc]);
+    create_dllist([], Acc, PreviousPid, CurrentPid) -> 
+        lists:reverse([{PreviousPid, CurrentPid, 'end'} | Acc]);
 
-create_dllist(List, Acc, head, CurrentPid) ->
-    [H|T] = List,
-    NextPid = spawn(?MODULE, listItem, [H]),
-    create_dllist(T, [{head, CurrentPid, NextPid} | Acc], CurrentPid, NextPid);
+    create_dllist(List, Acc, head, CurrentPid) ->
+        [H|T] = List,
+        NextPid = spawn(?MODULE, listItem, [H]),
+        create_dllist(T, [{head, CurrentPid, NextPid} | Acc], CurrentPid, NextPid);
 
-create_dllist(List, Acc, PreviousPid, CurrentPid) ->
-    [H|T] = List,
-    NextPid = spawn(?MODULE, listItem, [H]),
-    create_dllist(T, [{PreviousPid, CurrentPid, NextPid} | Acc], CurrentPid, NextPid).
+    create_dllist(List, Acc, PreviousPid, CurrentPid) ->
+        [H|T] = List,
+        NextPid = spawn(?MODULE, listItem, [H]),
+        create_dllist(T, [{PreviousPid, CurrentPid, NextPid} | Acc], CurrentPid, NextPid).
 listItem(Value) ->
     receive
         {get, SenderPid} -> SenderPid ! Value
