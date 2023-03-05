@@ -2,14 +2,20 @@
 
 Implemented using Erlang
 
+## Install erlang on windows with chocolatey
+
+```
+$ choco install erlang
+```
+
 ## Build
 
 Example for week1
 
 ```
-$ cd [week1]
+$ cd week1
 $ erl
-$ c(week1).
+$> c(week1).
 ```
 
 ## Run function
@@ -17,7 +23,7 @@ $ c(week1).
 Example for week1
 
 ```
-$ week1:hello_world().
+$> week1:hello_world().
 ```
 
 ## Run test
@@ -25,5 +31,5 @@ $ week1:hello_world().
 Example for week1
 
 ```
-$ week1:test().
+$> week1:test().
 ```
