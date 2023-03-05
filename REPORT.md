@@ -948,7 +948,7 @@ replace_html_entities_with_text(String) ->
     string:replace(String, "&#39;", "'", all).
 ```
 
-I wrote a function visit_quotes/0 that calls the request_quotes/0 and prints its results. The request_quotes/0 function makes a call to the https://quotes.toscrape.com/ link and returns the status code, response header and response body. The replace_html_entities_with_text/1 takes a string as input and replaces some html entities with its coresponding, human readable, text.
+I wrote a function visit_quotes/0 that calls the request_quotes/0 and prints its results. The request_quotes/0 function makes a call to the [https://quotes.toscrape.com/](https://quotes.toscrape.com/) link and returns the status code, response header and response body. The replace_html_entities_with_text/1 takes a string as input and replaces some html entities with its coresponding, human readable, text.
 
 **Task 2** -- **Minimal Task** Continue your previous application. Extract all quotes from the HTTP response body. Collect the author of the quote, the quote text and tags. Save the data into a list of maps, each map representing a single quote.
 
@@ -1499,48 +1499,48 @@ This project was an interesting and fun one and I'm looking forward to the next 
 
 ### Courses:
 
-https://www.udemy.com/course/modern-erlang-for-beginners/
+[https://www.udemy.com/course/modern-erlang-for-beginners/](https://www.udemy.com/course/modern-erlang-for-beginners/)
 
-https://www.udemy.com/course/master-erlang-programming-in-just-4-hours/
+[https://www.udemy.com/course/master-erlang-programming-in-just-4-hours/](https://www.udemy.com/course/master-erlang-programming-in-just-4-hours/)
 
 ### Links:
 
 Erlang documentation:
 
-https://www.erlang.org/doc/
+[https://www.erlang.org/doc/](https://www.erlang.org/doc/)
 
-https://www.erlang.org/doc/man/stdlib_app
+[https://www.erlang.org/doc/man/stdlib_app](https://www.erlang.org/doc/man/stdlib_app)
 
-https://www.erlang.org/doc/apps/inets/http_client.html
+[https://www.erlang.org/doc/apps/inets/http_client.html](https://www.erlang.org/doc/apps/inets/http_client.html)
 
-https://www.erlang.org/doc/apps/inets/http_server.html
+[https://www.erlang.org/doc/apps/inets/http_server.html](https://www.erlang.org/doc/apps/inets/http_server.html)
 
 Rebar3, Cowboy:
 
-https://github.com/erlang/rebar3
+[https://github.com/erlang/rebar3](https://github.com/erlang/rebar3)
 
-https://ninenines.eu/docs/en/cowboy/2.6/guide/
+[https://ninenines.eu/docs/en/cowboy/2.6/guide/](https://ninenines.eu/docs/en/cowboy/2.6/guide/)
 
-https://ezoeryou.github.io/blog/article/2020-04-07-tutorial.html
+[https://ezoeryou.github.io/blog/article/2020-04-07-tutorial.html](https://ezoeryou.github.io/blog/article/2020-04-07-tutorial.html)
 
-https://habr.com/ru/post/319950/
+[https://habr.com/ru/post/319950/](https://habr.com/ru/post/319950/)
 
-https://www.davekuhlman.org/rebar3-cowboy-rest-template.html
+[https://www.davekuhlman.org/rebar3-cowboy-rest-template.html](https://www.davekuhlman.org/rebar3-cowboy-rest-template.html)
 
-https://www.youtube.com/watch?v=5sOBwY2bTLY&list=PLOjc9X-vV0SH45CCKZsRsm5b_JO-w24Jz
+[https://www.youtube.com/watch?v=5sOBwY2bTLY&list=PLOjc9X-vV0SH45CCKZsRsm5b_JO-w24Jz](https://www.youtube.com/watch?v=5sOBwY2bTLY&list=PLOjc9X-vV0SH45CCKZsRsm5b_JO-w24Jz)
 
-https://www.youtube.com/watch?v=aWpSgAAiZaE
+[https://www.youtube.com/watch?v=aWpSgAAiZaE](https://www.youtube.com/watch?v=aWpSgAAiZaE)
 
-https://www.youtube.com/watch?v=BO-8Hx8kPtA
+[https://www.youtube.com/watch?v=BO-8Hx8kPtA](https://www.youtube.com/watch?v=BO-8Hx8kPtA)
 
-https://www.youtube.com/watch?v=CQh-b5miMAo
+[https://www.youtube.com/watch?v=CQh-b5miMAo](https://www.youtube.com/watch?v=CQh-b5miMAo)
 
-https://github.com/cwmaguire/erl_ws
+[https://github.com/cwmaguire/erl_ws](https://github.com/cwmaguire/erl_ws)
 
 Spotify API:
 
-https://developer.spotify.com/documentation/web-api/quick-start/
+[https://developer.spotify.com/documentation/web-api/quick-start/](https://developer.spotify.com/documentation/web-api/quick-start/)
 
-https://developer.spotify.com/documentation/web-api/reference/#/
+[https://developer.spotify.com/documentation/web-api/reference/#/](https://developer.spotify.com/documentation/web-api/reference/#/)
 
-https://developer.spotify.com/documentation/general/guides/authorization/code-flow/
+[https://developer.spotify.com/documentation/general/guides/authorization/code-flow/](https://developer.spotify.com/documentation/general/guides/authorization/code-flow/)
