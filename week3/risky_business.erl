@@ -12,7 +12,6 @@ create_scheduler() ->
     spawn(?MODULE, scheduler, [Tasks]).
 
 scheduler(Tasks) ->
-    %io:format("~w~n", [Tasks]),
     receive
         {'DOWN',_,_,SuccessPid, normal} ->
             scheduler(dict:erase(SuccessPid, Tasks));

@@ -21,24 +21,6 @@ new_playlist(Name) ->
             {ok, StatusCode, Headers, ResponseBody}
     end.
     
-% bonus:search_song("Along came a spider").
-search_song(Query) ->
-    AccessToken = init_request(),
-    Request = {
-        "https://api.spotify.com/v1/search?include_external=audio&type=track&limit=1&q="++string:replace(Query, " ", "%20", all),
-        [{"Authorization", "Bearer " ++ AccessToken}]
-    },
-    {ok, {{_, StatusCode, _}, _, Body}} = httpc:request(get,Request,[],[]),
-    DecodedBody = jsx:decode(list_to_binary(Body)),
-    #{<<"tracks">> := 
-        #{<<"items">>:= 
-            [#{<<"uri">>:= SongId}]
-        }
-    } = DecodedBody,
-    case StatusCode of 
-        401 -> refresh_token(), search_song(Query);
-        _  -> SongId
-    end.
 % bonus:add_song("Along came a spider").
 add_song(Query) ->
     AccessToken = init_request(),
@@ -75,6 +57,25 @@ change_image() ->
     end.
     
 % local functions
+
+% bonus:search_song("Along came a spider").
+search_song(Query) ->
+    AccessToken = init_request(),
+    Request = {
+        "https://api.spotify.com/v1/search?include_external=audio&type=track&limit=1&q="++string:replace(Query, " ", "%20", all),
+        [{"Authorization", "Bearer " ++ AccessToken}]
+    },
+    {ok, {{_, StatusCode, _}, _, Body}} = httpc:request(get,Request,[],[]),
+    DecodedBody = jsx:decode(list_to_binary(Body)),
+    #{<<"tracks">> := 
+        #{<<"items">>:= 
+            [#{<<"uri">>:= SongId}]
+        }
+    } = DecodedBody,
+    case StatusCode of 
+        401 -> refresh_token(), search_song(Query);
+        _  -> SongId
+    end.
 
 refresh_token() ->
     {ok, TokensJson} = file:read_file("tokens.json"),
