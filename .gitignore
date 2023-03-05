@@ -15,3 +15,10 @@ deps
 .rebar3
 _build/
 _checkouts/
+
+# custom
+env.json
+playlist_response.json
+tokens.json
+quotes.json
+playlist_image.jpg

@@ -1,0 +1,16 @@
+{application, week5,
+ [{description, "An OTP application"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, {main_app, []}},
+  {applications,
+   [kernel,
+    stdlib,
+    cowboy
+   ]},
+  {env,[]},
+  {modules, [minimal, main]},
+
+  {licenses, []},
+  {links, ["Github","https://github.com/darkcat013/ptr-lab1"]}
+ ]}.
